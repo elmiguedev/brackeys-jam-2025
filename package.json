@@ -1,0 +1,12 @@
+{
+  "name": "brackeys-jam-2025",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "phaser": "^3.88.2"
+  },
+  "devDependencies": {
+    "vite": "^6.1.0"
+  }
+}
