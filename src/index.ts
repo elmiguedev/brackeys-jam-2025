@@ -7,7 +7,10 @@ export default new Game({
   type: Phaser.AUTO,
   width: 600,
   height: 600,
-  backgroundColor: "",
+  backgroundColor: "#ffffff",
+  render: {
+    pixelArt: true
+  },
   scene: [
     BootloaderScene,
     StartScene,
