@@ -1,6 +1,7 @@
 import { Game } from "phaser";
 import BootloaderScene from "./scenes/BootloaderScene";
 import StartScene from "./scenes/StartScene";
+import GameScene from "./scenes/GameScene";
 
 export default new Game({
   type: Phaser.AUTO,
@@ -9,6 +10,7 @@ export default new Game({
   backgroundColor: "",
   scene: [
     BootloaderScene,
-    StartScene
+    StartScene,
+    GameScene
   ]
 })

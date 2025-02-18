@@ -2,6 +2,10 @@
 
 Temática de la JAM: Nada puede salir mal
 
+## Nombre clave
+
+- El Desbombineitor
+
 ## Ideas
 
 - El juego se trata de un pibe que desactiva bombas
@@ -11,3 +15,4 @@ Temática de la JAM: Nada puede salir mal
  
 
 JUEGARRDIIII
+
