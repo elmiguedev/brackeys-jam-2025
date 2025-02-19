@@ -16,3 +16,22 @@ Temática de la JAM: Nada puede salir mal
 
 JUEGARRDIIII
 
+## Niveles 
+
+Nivel 1: 
+Premisa:"Corta el cable rojo"
+Contexto: hay un cable rojo, uno azul y uno verde
+Condicion de victoria: cortas el rojo
+
+Nivel 2: 
+Premisa: "Corta el cable rojo"
+Contexto: Hay 3 cables rojos :V 
+Condicion de victoria: cortas cualquier cable
+
+Nivel 3: 
+Premisa: "Corta el cable rojo"
+Contexto: No se ve nada, hay un cable rojo y 2 dsintintos
+Condicion de victoria: En algun lado hay un switch, se prende la luz, y ahi ves
+
+
+
