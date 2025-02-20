@@ -4,5 +4,7 @@ export const WIRE_COLORS = {
   BLUE: 0x0000ff,
   YELLOW: 0xffff00,
   CYAN: 0x00ffff,
-  MAGENTA: 0xff00ff
+  MAGENTA: 0xff00ff,
+  GRAY: 0xc5c5c5,
+  WHITE: 0xffffff,
 }
