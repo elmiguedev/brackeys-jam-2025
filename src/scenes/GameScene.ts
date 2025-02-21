@@ -1,5 +1,6 @@
 import { Bomb } from "../entities/Bomb";
 import { Timer } from "../entities/Timer";
+import { INITIAL_LEVEL } from "../utils/Constants";
 
 export default class GameScene extends Phaser.Scene {
   private bomb: Bomb;
@@ -11,7 +12,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   public create() {
-    this.level = 0;
+    this.level = INITIAL_LEVEL - 1;
     this.createCamera();
     // this.createBomb();
     // this.createTimer();

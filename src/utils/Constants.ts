@@ -8,3 +8,5 @@ export const WIRE_COLORS = {
   GRAY: 0xc5c5c5,
   WHITE: 0xffffff,
 }
+
+export const INITIAL_LEVEL = 10;

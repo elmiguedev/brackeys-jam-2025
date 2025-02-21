@@ -11,8 +11,8 @@ export class Wire extends Phaser.GameObjects.Sprite {
     this.scene.add.existing(this);
     this.color = color;
     this.setInteractive({ cursor: "pointer" });
-    this.on("pointerup", (e) => this.onClick());
-    this.on("pointerover", () => this.onHover());
+    this.on("pointerdown", (e) => this.onClick && this.onClick());
+    this.on("pointerover", () => this.onHover && this.onHover());
     this.setTint(color);
   }
 
