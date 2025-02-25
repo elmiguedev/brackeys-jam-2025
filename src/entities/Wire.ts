@@ -32,4 +32,9 @@ export class Wire extends Phaser.GameObjects.Sprite {
     this.label.setDepth(this.depth + 1);
   }
 
+  public destroy(fromScene?: boolean): void {
+    super.destroy(fromScene);
+    this.label && this.label.destroy(fromScene);
+  }
+
 }
