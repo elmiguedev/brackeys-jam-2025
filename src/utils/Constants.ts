@@ -9,4 +9,13 @@ export const WIRE_COLORS = {
   WHITE: 0xffffff,
 }
 
-export const INITIAL_LEVEL = 10;
+export const INITIAL_LEVEL = 13;
+export const SCREW_LIMIT = 3;
+export const ENTITIES_DEPTH = {
+  BOMB_INNER_BOX: 1,
+  BOMB_INNER_WIRES: 2,
+  BOMB_BOX: 4,
+  BOMB_WIRES: 5,
+  BOMB_SCREWS: 7,
+  BOMB_TITLE: 8,
+}

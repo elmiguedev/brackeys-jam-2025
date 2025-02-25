@@ -4,6 +4,7 @@ import { BombLevel1 } from "./levels/BombLevel1";
 import { BombLevel10 } from "./levels/BombLevel10";
 import { BombLevel11 } from "./levels/BombLevel11";
 import { BombLevel12 } from "./levels/BombLevel12";
+import { BombLevel13 } from "./levels/BombLevel13";
 import { BombLevel2 } from "./levels/BombLevel2";
 import { BombLevel3 } from "./levels/BombLevel3";
 import { BombLevel4 } from "./levels/BombLevel4";
@@ -28,6 +29,7 @@ export class BombStrategyFactory {
       case 10: return new BombLevel10(bomb);
       case 11: return new BombLevel11(bomb);
       case 12: return new BombLevel12(bomb);
+      case 13: return new BombLevel13(bomb);
     }
   }
 }

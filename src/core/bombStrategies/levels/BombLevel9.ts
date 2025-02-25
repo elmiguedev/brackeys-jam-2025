@@ -15,24 +15,27 @@ export class BombLevel9 implements BombStrategy {
     this.bomb = bomb;
     this.scene = bomb.scene;
     this.wires = WiresFactory.createThreeWires(this.bomb, [
-      { color: WIRE_COLORS.GRAY, correct: false },
-      { color: WIRE_COLORS.GRAY, correct: false },
-      { color: WIRE_COLORS.GRAY, correct: false },
+      { color: WIRE_COLORS.GRAY, correct: true },
+      { color: WIRE_COLORS.GRAY, correct: true },
+      { color: WIRE_COLORS.GRAY, correct: true },
     ]);
-
-    this.wires.forEach(w => {
-      if (w.color === WIRE_COLORS.RED) {
-        w.onClick = () => { this.bomb.defuse() };
-      } else {
-        w.onClick = () => { this.bomb.explode() };
-      }
-    })
 
     this.timer = this.scene.time.addEvent({
       delay: 500,
       loop: true,
       callback: () => {
-        this.wires.forEach(wire => { wire.setRandomColor() });
+        this.wires.forEach(wire => {
+          wire.setRandomColor();
+          if (wire.color === WIRE_COLORS.RED) {
+            wire.onClick = () => {
+              this.bomb.defuse();
+            };
+          } else {
+            wire.onClick = () => {
+              this.bomb.explode();
+            };
+          }
+        });
       },
     });
   }

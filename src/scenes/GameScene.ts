@@ -41,6 +41,8 @@ export default class GameScene extends Phaser.Scene {
       // alert("perdiste");
       this.scene.start("StartScene");
     }
+
+
   }
 
   private createTimer() {

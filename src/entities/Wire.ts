@@ -6,14 +6,16 @@ export class Wire extends Phaser.GameObjects.Sprite {
   public color: number;
   private label: Phaser.GameObjects.Text;
 
-  constructor(scene: Phaser.Scene, x: number, y: number, color: number) {
+  constructor(scene: Phaser.Scene, x: number, y: number, color: number, depth: number) {
     super(scene, x, y, "wire");
+
     this.scene.add.existing(this);
     this.color = color;
     this.setInteractive({ cursor: "pointer" });
     this.on("pointerdown", (e) => this.onClick && this.onClick());
     this.on("pointerover", () => this.onHover && this.onHover());
     this.setTint(color);
+    this.setDepth(depth);
   }
 
   public setRandomColor() {
@@ -27,6 +29,7 @@ export class Wire extends Phaser.GameObjects.Sprite {
     this.label = this.scene.add.text(this.x, this.y, text, { color: color || "#000000" });
     this.label.setOrigin(0.5, 0.5);
     this.label.setAngle(90);
+    this.label.setDepth(this.depth + 1);
   }
 
 }

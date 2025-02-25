@@ -1,12 +1,14 @@
 import { Scene } from "phaser";
 import { Wire } from "../../entities/Wire";
 import { Bomb } from "../../entities/Bomb";
+import { ENTITIES_DEPTH } from "../../utils/Constants";
 
 interface WireDefinition {
   color: number;
   correct: boolean;
   label?: string;
   labelColor?: string;
+  depth?: number
 }
 
 export class WiresFactory {
@@ -16,7 +18,14 @@ export class WiresFactory {
     const wires = [];
 
     definitions.forEach((def, i) => {
-      const wire = new Wire(bomb.scene, xBase + (i * 100), y, def.color);
+      const wire = new Wire(
+        bomb.scene,
+        xBase + (i * 100),
+        y,
+        def.color,
+        def.depth || ENTITIES_DEPTH.BOMB_WIRES
+      );
+
       if (def.label) {
         wire.setText(def.label, def.labelColor);
       }
@@ -35,7 +44,7 @@ export class WiresFactory {
     const x = bomb.scene.game.canvas.width / 2;
     const y = bomb.scene.game.canvas.height / 2;
 
-    const wire = new Wire(bomb.scene, x, y, definition.color);
+    const wire = new Wire(bomb.scene, x, y, definition.color, definition.depth || ENTITIES_DEPTH.BOMB_WIRES);
     if (definition.label) {
       wire.setText(definition.label, definition.labelColor);
     }
