@@ -2,7 +2,7 @@ import { Scene } from "phaser";
 import { BombStrategy } from "../core/bombStrategies/BombStrategy";
 import { BombStrategyFactory } from "../core/bombStrategies/BombStategyFactory";
 import { Screw } from "./Screw";
-import { ENTITIES_DEPTH, SCALE_FACTOR } from "../utils/Constants";
+import { BOMB_Y_OFFSET, ENTITIES_DEPTH, SCALE_FACTOR } from "../utils/Constants";
 
 export class Bomb {
   public onExplode: () => void;
@@ -69,7 +69,7 @@ export class Bomb {
 
   private createLevelText() {
     const x = this.scene.game.canvas.width / 2;
-    const y = 40;
+    const y = 50;
     const levelText = `Cut the RED wire`;
 
     this.levelTitle = this.scene.add.text(
@@ -107,7 +107,7 @@ export class Bomb {
 
   private createBombBox() {
     const x = this.scene.game.canvas.width / 2;
-    const y = this.scene.game.canvas.height / 2;
+    const y = (this.scene.game.canvas.height / 2) + BOMB_Y_OFFSET;
 
     this.bombBoxSprite = this.scene.add.image(
       x,
@@ -127,7 +127,7 @@ export class Bomb {
 
   private createScrews() {
     const xCenter = this.scene.game.canvas.width / 2;
-    const yCenter = this.scene.game.canvas.height / 2;
+    const yCenter = (this.scene.game.canvas.height / 2) + BOMB_Y_OFFSET;
     const xOffset = 190;
     const yOffset = 190;
 

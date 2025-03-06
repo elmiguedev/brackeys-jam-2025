@@ -11,6 +11,7 @@ export const WIRE_COLORS = {
 
 export const INITIAL_LEVEL = 10;
 
+export const BOMB_Y_OFFSET = 20;
 export const SCALE_FACTOR = 8;
 export const SCREW_LIMIT = 3;
 export const ENTITIES_DEPTH = {

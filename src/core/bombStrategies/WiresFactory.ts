@@ -1,7 +1,7 @@
 import { Scene } from "phaser";
 import { Wire } from "../../entities/Wire";
 import { Bomb } from "../../entities/Bomb";
-import { ENTITIES_DEPTH } from "../../utils/Constants";
+import { BOMB_Y_OFFSET, ENTITIES_DEPTH } from "../../utils/Constants";
 
 interface WireDefinition {
   color: number;
@@ -14,7 +14,7 @@ interface WireDefinition {
 export class WiresFactory {
   public static createThreeWires(bomb: Bomb, definitions: WireDefinition[]) {
     const xBase = 212;
-    const y = (bomb.scene.game.canvas.height / 2) + 44;
+    const y = (bomb.scene.game.canvas.height / 2) + 44 + BOMB_Y_OFFSET;
     const wires = [];
 
     definitions.forEach((def, i) => {
@@ -42,7 +42,7 @@ export class WiresFactory {
 
   public static createSingleWire(bomb: Bomb, definition: WireDefinition) {
     const x = bomb.scene.game.canvas.width / 2;
-    const y = (bomb.scene.game.canvas.height / 2) + 44;
+    const y = (bomb.scene.game.canvas.height / 2) + 44 + BOMB_Y_OFFSET;
 
     const wire = new Wire(bomb.scene, x, y, definition.color, definition.depth || ENTITIES_DEPTH.BOMB_WIRES);
     if (definition.label) {
