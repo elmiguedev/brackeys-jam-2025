@@ -1,4 +1,4 @@
-import { ENTITIES_DEPTH, SCREW_LIMIT } from "../utils/Constants";
+import { ENTITIES_DEPTH, SCALE_FACTOR, SCREW_LIMIT } from "../utils/Constants";
 
 export class Screw extends Phaser.GameObjects.Sprite {
   public onLimit?: () => void;
@@ -10,6 +10,7 @@ export class Screw extends Phaser.GameObjects.Sprite {
     super(scene, x, y, "screw");
     this.scene.add.existing(this);
     this.setDepth(ENTITIES_DEPTH.BOMB_SCREWS)
+    this.setScale(SCALE_FACTOR);
   }
 
   public rotate() {

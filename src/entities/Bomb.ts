@@ -2,7 +2,7 @@ import { Scene } from "phaser";
 import { BombStrategy } from "../core/bombStrategies/BombStrategy";
 import { BombStrategyFactory } from "../core/bombStrategies/BombStategyFactory";
 import { Screw } from "./Screw";
-import { ENTITIES_DEPTH } from "../utils/Constants";
+import { ENTITIES_DEPTH, SCALE_FACTOR } from "../utils/Constants";
 
 export class Bomb {
   public onExplode: () => void;
@@ -95,12 +95,12 @@ export class Bomb {
       x,
       y,
       "bomb_box"
-    ).setDepth(ENTITIES_DEPTH.BOMB_BOX);
+    ).setScale(SCALE_FACTOR).setDepth(ENTITIES_DEPTH.BOMB_BOX);
     this.bombInnerBoxSprite = this.scene.add.image(
       x,
       y,
       "bomb_inner_box"
-    ).setDepth(ENTITIES_DEPTH.BOMB_INNER_BOX);
+    ).setScale(SCALE_FACTOR).setDepth(ENTITIES_DEPTH.BOMB_INNER_BOX);
   }
 
   private createBombStrategy() {
@@ -108,11 +108,16 @@ export class Bomb {
   }
 
   private createScrews() {
+    const xCenter = this.scene.game.canvas.width / 2;
+    const yCenter = this.scene.game.canvas.height / 2;
+    const xOffset = 190;
+    const yOffset = 190;
+
     this.screws = {
-      topLeft: new Screw(this.scene, 125, 125),
-      topRight: new Screw(this.scene, 470, 125),
-      bottomLeft: new Screw(this.scene, 125, 470),
-      bottomRight: new Screw(this.scene, 470, 470),
+      topLeft: new Screw(this.scene, xCenter - xOffset, yCenter - yOffset),
+      topRight: new Screw(this.scene, xCenter + xOffset, yCenter - yOffset),
+      bottomLeft: new Screw(this.scene, xCenter - xOffset, yCenter + yOffset),
+      bottomRight: new Screw(this.scene, xCenter + xOffset, yCenter + yOffset),
     }
   }
 

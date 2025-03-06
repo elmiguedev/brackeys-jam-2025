@@ -1,10 +1,10 @@
 import ExamplePng from "../assets/img/exmaple.png";
 import TitlePng from "../assets/img/start/title.png";
 import StartButtonPng from "../assets/img/start/start_button.png";
-import WirePng from "../assets/img/game/wire.png";
-import BombBoxPng from "../assets/img/game/bomb_box.png";
-import BombInnerBoxPng from "../assets/img/game/bomb_inner_box.png";
-import ScrewPng from "../assets/img/game/screw.png";
+import WirePng from "../assets/img/game/bomb/wire.png";
+import BombBoxPng from "../assets/img/game/bomb/box.png";
+import BombInnerBoxPng from "../assets/img/game/bomb/inner-box.png";
+import ScrewPng from "../assets/img/game/bomb/screw.png";
 import RedOgg from "../assets/sound/red.ogg";
 
 export default class BootloaderScene extends Phaser.Scene {

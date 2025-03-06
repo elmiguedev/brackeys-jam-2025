@@ -1,4 +1,4 @@
-import { WIRE_COLORS } from "../utils/Constants";
+import { SCALE_FACTOR, WIRE_COLORS } from "../utils/Constants";
 
 export class Wire extends Phaser.GameObjects.Sprite {
   public onClick: () => void;
@@ -16,6 +16,7 @@ export class Wire extends Phaser.GameObjects.Sprite {
     this.on("pointerover", () => this.onHover && this.onHover());
     this.setTint(color);
     this.setDepth(depth);
+    this.setScale(SCALE_FACTOR);
   }
 
   public setRandomColor() {

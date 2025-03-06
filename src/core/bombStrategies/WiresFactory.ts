@@ -13,14 +13,14 @@ interface WireDefinition {
 
 export class WiresFactory {
   public static createThreeWires(bomb: Bomb, definitions: WireDefinition[]) {
-    const xBase = 200;
-    const y = bomb.scene.game.canvas.height / 2;
+    const xBase = 212;
+    const y = (bomb.scene.game.canvas.height / 2) + 44;
     const wires = [];
 
     definitions.forEach((def, i) => {
       const wire = new Wire(
         bomb.scene,
-        xBase + (i * 100),
+        xBase + (i * 88),
         y,
         def.color,
         def.depth || ENTITIES_DEPTH.BOMB_WIRES
@@ -42,7 +42,7 @@ export class WiresFactory {
 
   public static createSingleWire(bomb: Bomb, definition: WireDefinition) {
     const x = bomb.scene.game.canvas.width / 2;
-    const y = bomb.scene.game.canvas.height / 2;
+    const y = (bomb.scene.game.canvas.height / 2) + 44;
 
     const wire = new Wire(bomb.scene, x, y, definition.color, definition.depth || ENTITIES_DEPTH.BOMB_WIRES);
     if (definition.label) {
