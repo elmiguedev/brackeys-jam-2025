@@ -4,7 +4,7 @@ Temática de la JAM: Nada puede salir mal
 
 ## Nombre clave
 
-- El Desbombineitor
+- Cut the RED wire
 
 ## Ideas
 
@@ -13,25 +13,20 @@ Temática de la JAM: Nada puede salir mal
 - Pero el tema es que se le va la vision al choto y ahora tiene que ver como hace para encontrar el rojo (ponele, ve en escala de grises) (o podrias er que se le corta la luz)
 - El objetivo del juego es desactivar todas las bombas que le van llegando hasta que el cuerpo y los ojos lo permitan
  
+- que explote, "la bomba fuiste vos todo el tiempo o algo mas turbio, "congrats! preveniste la destruccion de skynet"
 
 JUEGARRDIIII
 
 ## Niveles 
 
-Nivel 1: 
-Premisa:"Corta el cable rojo"
-Contexto: hay un cable rojo, uno azul y uno verde
-Condicion de victoria: cortas el rojo
-
-Nivel 2: 
-Premisa: "Corta el cable rojo"
-Contexto: Hay 3 cables rojos :V 
-Condicion de victoria: cortas cualquier cable
-
-Nivel 3: 
-Premisa: "Corta el cable rojo"
-Contexto: No se ve nada, hay un cable rojo y 2 dsintintos
-Condicion de victoria: En algun lado hay un switch, se prende la luz, y ahi ves
-
-
+## TODOS
+- hacer la start scene
+- agregar sonidos (ambiente y de elementos)
+- hacer el display de la bomba (timer)
+- escena de game over (ver que agregamos)
+- dar mas peso al texto del nivel
+- agregar creditos / links a github
+- publicar
+- leaderboard o lista de los que desactivaron (onda como en los arcades viejos)
+- hacer mas niveles
 

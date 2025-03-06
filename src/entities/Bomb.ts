@@ -30,7 +30,7 @@ export class Bomb {
     this.createLevelText();
     this.createLevelNumber();
     this.createScrews();
-
+    this.createDisplay();
     this.createBombStrategy(); // SIEMPRE AL ULTIMO
   }
 
@@ -137,6 +137,20 @@ export class Bomb {
       bottomLeft: new Screw(this.scene, xCenter - xOffset, yCenter + yOffset),
       bottomRight: new Screw(this.scene, xCenter + xOffset, yCenter + yOffset),
     }
+  }
+
+  private createDisplay() {
+    this.scene.add.text(
+      this.scene.game.canvas.width / 2,
+      196,
+      "10:23",
+      {
+        color: "#fef3c0",
+        fontFamily: "Tiny5",
+        fontSize: "40px",
+        letterSpacing: 8
+      }
+    ).setDepth(20).setOrigin(0.5);
   }
 
 
