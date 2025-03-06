@@ -30,10 +30,14 @@ export class BombLevel10 implements BombStrategy {
 
   private createHiddenWire() {
     const centerX = this.scene.game.canvas.width / 2;
-    const x = centerX - 53;
-    const y = 50;
+    const x = centerX - 70;
+    const y = 40;
 
-    this.hiddenWire = this.scene.add.text(x, y, "t", { color: "#ff0000" }).setOrigin(0.5);
+    this.hiddenWire = this.scene.add.text(x, y, "t", {
+      color: "#ff0000",
+      fontFamily: "Tiny5",
+      fontSize: "40px",
+    }).setOrigin(0.5);
     this.hiddenWire.setInteractive({ cursor: "pointer" });
     this.hiddenWire.on("pointerdown", () => this.bomb.defuse());
     this.hiddenWire.setDepth(ENTITIES_DEPTH.BOMB_TITLE + 2);

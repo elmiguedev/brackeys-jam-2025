@@ -69,20 +69,38 @@ export class Bomb {
 
   private createLevelText() {
     const x = this.scene.game.canvas.width / 2;
-    const y = 50;
+    const y = 40;
     const levelText = `Cut the RED wire`;
 
-    this.levelTitle = this.scene.add.text(x, y, levelText, { color: "#000000" })
+    this.levelTitle = this.scene.add.text(
+      x,
+      y,
+      levelText,
+      {
+        color: "#000000",
+        fontFamily: "Tiny5",
+        fontSize: "40px",
+      }
+    )
       .setOrigin(0.5)
       .setDepth(ENTITIES_DEPTH.BOMB_TITLE)
   }
 
   private createLevelNumber() {
     const x = this.scene.game.canvas.width / 2;
-    const y = 20;
+    const y = 10;
     const levelText = `(${this.level})`;
 
-    this.levelNumber = this.scene.add.text(x, y, levelText, { color: "#000000" })
+    this.levelNumber = this.scene.add.text(
+      x,
+      y,
+      levelText,
+      {
+        color: "#000000",
+        fontFamily: "Tiny5",
+        fontSize: "40px",
+      }
+    )
       .setOrigin(0.5)
       .setDepth(ENTITIES_DEPTH.BOMB_TITLE)
   }

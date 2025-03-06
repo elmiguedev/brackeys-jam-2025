@@ -9,7 +9,7 @@ export const WIRE_COLORS = {
   WHITE: 0xffffff,
 }
 
-export const INITIAL_LEVEL = 13;
+export const INITIAL_LEVEL = 10;
 
 export const SCALE_FACTOR = 8;
 export const SCREW_LIMIT = 3;
