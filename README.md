@@ -20,13 +20,15 @@ JUEGARRDIIII
 ## Niveles 
 
 ## TODOS
+- hacer el display de la bomba (timer) 🟢
 - hacer la start scene
-- agregar sonidos (ambiente y de elementos)
-- hacer el display de la bomba (timer)
 - escena de game over (ver que agregamos)
-- dar mas peso al texto del nivel
+- agregar sonidos (ambiente y de elementos)
+
 - agregar creditos / links a github
 - publicar
+
+- dar mas peso al texto del nivel
 - leaderboard o lista de los que desactivaron (onda como en los arcades viejos)
 - hacer mas niveles
 

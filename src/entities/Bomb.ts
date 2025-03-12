@@ -2,13 +2,15 @@ import { Scene } from "phaser";
 import { BombStrategy } from "../core/bombStrategies/BombStrategy";
 import { BombStrategyFactory } from "../core/bombStrategies/BombStategyFactory";
 import { Screw } from "./Screw";
-import { BOMB_Y_OFFSET, ENTITIES_DEPTH, SCALE_FACTOR } from "../utils/Constants";
+import { BOMB_TIMER, BOMB_Y_OFFSET, ENTITIES_DEPTH, SCALE_FACTOR } from "../utils/Constants";
 
 export class Bomb {
   public onExplode: () => void;
   public onDefuse: () => void;
   public scene: Scene;
   public level: number = 0;
+  public timer: Phaser.Time.TimerEvent;
+  public currentTime: number = BOMB_TIMER;
   public screws: {
     topLeft: Screw;
     topRight: Screw;
@@ -21,7 +23,7 @@ export class Bomb {
   private levelTitle: Phaser.GameObjects.Text;
   private bombBoxSprite: Phaser.GameObjects.Image;
   private bombInnerBoxSprite: Phaser.GameObjects.Image;
-
+  private timerText: Phaser.GameObjects.Text;
 
   constructor(scene: Phaser.Scene, level: number) {
     this.level = level;
@@ -43,6 +45,8 @@ export class Bomb {
     this.screws.topRight.destroy(true);
     this.screws.bottomLeft.destroy(true);
     this.screws.bottomRight.destroy(true);
+    this.timer.destroy();
+    this.timerText.destroy(true);
   }
 
   public setTitle(title: string) {
@@ -140,10 +144,10 @@ export class Bomb {
   }
 
   private createDisplay() {
-    this.scene.add.text(
+    this.timerText = this.scene.add.text(
       this.scene.game.canvas.width / 2,
       196,
-      "10:23",
+      `00:${this.currentTime.toString().padStart(2, "0")}`,
       {
         color: "#fef3c0",
         fontFamily: "Tiny5",
@@ -151,6 +155,19 @@ export class Bomb {
         letterSpacing: 8
       }
     ).setDepth(20).setOrigin(0.5);
+    this.timer = this.scene.time.addEvent({
+      loop: true,
+      delay: 1000,
+      callback: () => {
+        this.currentTime--;
+        if (this.currentTime === 0) {
+          this.explode();
+        }
+        const currentTimeString = `00:${this.currentTime.toString().padStart(2, "0")}`;
+        this.timerText.setText(currentTimeString);
+      }
+    });
+
   }
 
 
