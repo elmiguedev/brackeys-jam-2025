@@ -10,8 +10,8 @@ export const WIRE_COLORS = {
 }
 
 export const WIRE_CURSOR = "url(wire_cutter_open.png), pointer";
-export const INITIAL_LEVEL = 8;
-export const BOMB_TIMER = 500;
+export const INITIAL_LEVEL = 1;
+export const BOMB_TIMER = 15;
 export const BOMB_Y_OFFSET = 20;
 export const SCALE_FACTOR = 8;
 export const SCREW_LIMIT = 3;
