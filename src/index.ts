@@ -5,8 +5,11 @@ import GameScene from "./scenes/GameScene";
 
 export default new Game({
   type: Phaser.AUTO,
-  width: 600,
-  height: 600,
+  parent: "#canvas",
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
   backgroundColor: "#ffffff",
   render: {
     pixelArt: true
