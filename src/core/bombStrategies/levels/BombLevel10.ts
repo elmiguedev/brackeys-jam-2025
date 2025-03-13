@@ -2,7 +2,7 @@ import { Scene } from "phaser";
 import { Bomb } from "../../../entities/Bomb";
 import { Wire } from "../../../entities/Wire";
 import { BombStrategy } from "../BombStrategy";
-import { ENTITIES_DEPTH, WIRE_COLORS } from "../../../utils/Constants";
+import { ENTITIES_DEPTH, WIRE_COLORS, WIRE_CURSOR } from "../../../utils/Constants";
 import { WiresFactory } from "../WiresFactory";
 
 export class BombLevel10 implements BombStrategy {
@@ -38,7 +38,7 @@ export class BombLevel10 implements BombStrategy {
       fontFamily: "Tiny5",
       fontSize: "40px",
     }).setOrigin(0.5);
-    this.hiddenWire.setInteractive({ cursor: "pointer" });
+    this.hiddenWire.setInteractive({ cursor: WIRE_CURSOR });
     this.hiddenWire.on("pointerdown", () => this.bomb.defuse());
     this.hiddenWire.setDepth(ENTITIES_DEPTH.BOMB_TITLE + 2);
   }

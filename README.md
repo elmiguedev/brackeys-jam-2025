@@ -21,14 +21,16 @@ JUEGARRDIIII
 
 ## TODOS
 - hacer el display de la bomba (timer) 🟢
-- hacer la start scene
-- escena de game over (ver que agregamos)
-- agregar sonidos (ambiente y de elementos)
-
+- hacer la start scene 🟢
+- agregar sonidos (ambiente y de elementos) 🟢
+- hacer que el display desaparezca cuando se abre la caja
+- hacer que cada nivel maneje su timer maximo
 - agregar creditos / links a github
 - publicar
 
+- hacer un paso previo al neutraize de la bomba para que el audio diga "disarming" y que despues de 1 segundo haga la accion (frenando el display)
 - dar mas peso al texto del nivel
 - leaderboard o lista de los que desactivaron (onda como en los arcades viejos)
 - hacer mas niveles
+- escena de game over (ver que agregamos)
 

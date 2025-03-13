@@ -54,10 +54,12 @@ export class Bomb {
   }
 
   public defuse() {
+    this.scene.sound.play("bomb_neutralized_audio");
     this.onDefuse();
   }
 
   public explode() {
+    this.scene.sound.play("bomb_explode_audio");
     this.onExplode();
   }
 
@@ -154,7 +156,7 @@ export class Bomb {
         fontSize: "40px",
         letterSpacing: 8
       }
-    ).setDepth(20).setOrigin(0.5);
+    ).setDepth(ENTITIES_DEPTH.BOMB_DISPLAY).setOrigin(0.5);
     this.timer = this.scene.time.addEvent({
       loop: true,
       delay: 1000,
@@ -163,6 +165,7 @@ export class Bomb {
         if (this.currentTime === 0) {
           this.explode();
         }
+        this.scene.sound.play("bomb_tick_audio");
         const currentTimeString = `00:${this.currentTime.toString().padStart(2, "0")}`;
         this.timerText.setText(currentTimeString);
       }

@@ -16,6 +16,7 @@ export class Screw extends Phaser.GameObjects.Sprite {
   public rotate() {
     if (!this.canRotate) return;
     this.canRotate = false;
+    this.scene.sound.play("screw_audio");
     this.scene.add.tween({
       targets: this,
       angle: this.angle + 90,

@@ -14,10 +14,6 @@ export default class GameScene extends Phaser.Scene {
   public create() {
     this.level = INITIAL_LEVEL - 1;
     this.createCamera();
-    // this.createBomb();
-    // this.createTimer();
-    // this.startTimer();
-
     this.nextLevel();
   }
 
@@ -38,23 +34,10 @@ export default class GameScene extends Phaser.Scene {
       this.nextLevel();
     }
     this.bomb.onExplode = () => {
-      // alert("perdiste");
       this.scene.start("StartScene");
     }
 
 
-  }
-
-  private createTimer() {
-    this.timer = new Timer(
-      this,
-      this.getCenter().x,
-      20
-    )
-  }
-
-  private startTimer() {
-    this.timer.startTimer(10);
   }
 
   private getCenter() {
